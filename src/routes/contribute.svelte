@@ -1,6 +1,18 @@
 <script lang="ts">
 	import { writeNewRelation } from "$lib/firebase";
-	import { step } from "./../../src/stores/session";
+	import { relationsResponse } from "./../../src/stores/session";
+
+	let hasSubmitted = false;
+	let showCopiedBanner = false;
+
+	function copyToClipboard() {
+		navigator.clipboard.writeText(document.location.host);
+		showCopiedBanner = true;
+
+		setTimeout(() => {
+			showCopiedBanner = false;
+		}, 3000);
+	}
 
 	function onSubmit(e: SubmitEvent) {
 		const formData = new FormData(e.target as HTMLFormElement);
@@ -10,7 +22,8 @@
 			const [key, value] = field;
 			data[key] = value;
 		}
-		writeNewRelation($step, data.english, data.swedish);
+
+		writeNewRelation($relationsResponse.length, data.english, data.swedish);
 		e?.target?.reset();
 	}
 </script>
@@ -18,23 +31,34 @@
 <div
 	class="h-screen w-full p-16 flex justify-center items-center align-middle flex-col relative"
 >
-	<form
-		class="w-full flex flex-col justify-between align-middle items-center"
-		on:submit|preventDefault={onSubmit}
-	>
-		<div class="w-full flex justify-around">
-			<div class="flex flex-col">
-				<label for="name">English</label>
-				<input class="p-3" id="english" name="english" value="" />
-			</div>
-			<div class="flex flex-col">
-				<label for="name">Swedish</label>
-				<input class="p-3" id="swedish" name="swedish" value="" />
-			</div>
+	{#if hasSubmitted}
+		<div>
+			Thanks!
+			<button
+				on:click|preventDefault={copyToClipboard}
+				class="px-4 py-3 border-slate-100 border rounded-3xl bg-slate-600 text-white w-52 mt-10"
+				>{showCopiedBanner
+					? "Copied to clipboard!"
+					: "Send it to your friends!"}</button
+			>
 		</div>
-		<button
-			class="px-4 py-3 border-slate-600 border rounded-3xl bg-slate-100 w-52 mt-10"
-			>Submit a concept pair!</button
+	{:else}<form
+			class="w-full flex flex-col justify-between align-middle items-center"
+			on:submit|preventDefault={onSubmit}
 		>
-	</form>
+			<div class="w-full flex justify-around">
+				<div class="flex flex-col">
+					<label for="name">English</label>
+					<input class="p-3" id="english" name="english" value="" />
+				</div>
+				<div class="flex flex-col">
+					<label for="name">Swedish</label>
+					<input class="p-3" id="swedish" name="swedish" value="" />
+				</div>
+			</div>
+			<button
+				class="px-4 py-3 border-slate-600 border rounded-3xl bg-slate-100 w-52 mt-10"
+				>Submit a concept pair!</button
+			>
+		</form>{/if}
 </div>

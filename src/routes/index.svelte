@@ -5,8 +5,11 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Swenglish</title>
+	<meta
+		name="description"
+		content="A voting system to decide which phrase is best in English or Swedish"
+	/>
 </svelte:head>
 
 <div

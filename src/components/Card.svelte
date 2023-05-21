@@ -3,11 +3,7 @@
 	export let onClick: () => void;
 	export let showVotes: boolean;
 	export let language: keyof Relations;
-	import {
-		step,
-		relationsResponse,
-		incrementStep
-	} from "./../../src/stores/session";
+	import { step, relationsResponse } from "./../../src/stores/session";
 
 	interface Relation {
 		concept: string;

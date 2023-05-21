@@ -52,14 +52,24 @@
 			class="w-full flex flex-col justify-between align-middle items-center"
 			on:submit|preventDefault={onSubmit}
 		>
-			<div class="w-full flex justify-around">
+			<div class="w-full flex gap-8 justify-center">
 				<div class="flex flex-col">
-					<label for="name">English</label>
-					<input class="p-3" id="english" name="english" value="" />
+					<input
+						class="p-3"
+						id="english"
+						name="english"
+						placeholder="English"
+						value=""
+					/>
 				</div>
 				<div class="flex flex-col">
-					<label for="name">Swedish</label>
-					<input class="p-3" id="swedish" name="swedish" value="" />
+					<input
+						class="p-3"
+						id="swedish"
+						name="swedish"
+						value=""
+						placeholder="Swedish"
+					/>
 				</div>
 			</div>
 			<button

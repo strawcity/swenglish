@@ -67,9 +67,9 @@
 					handleNextClick();
 				}}
 				in:fade={{ duration: 350, delay: 350 }}
-				class="absolute bottom-0 bg-slate-300 w-full rounded-t-md p-4 flex justify-center cursor-pointer"
+				class="absolute bottom-0 bg-slate-600 text-white w-full rounded-t-md p-4 flex justify-center cursor-pointer"
 			>
-				<h2 class="font-bold">Next</h2>
+				<h2 class="font-bold text-xl">Next</h2>
 			</div>
 		{/if}
 	</div>

@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { writeNewRelation } from "$lib/firebase";
 	import { relationsResponse } from "./../../src/stores/session";
+	import { getData } from "$lib/firebase";
 
 	let hasSubmitted = false;
 	let showCopiedBanner = false;
+
+	if (!$relationsResponse) {
+		getData();
+	}
 
 	function copyToClipboard() {
 		navigator.clipboard.writeText(document.location.host);
@@ -22,9 +27,11 @@
 			const [key, value] = field;
 			data[key] = value;
 		}
-
-		writeNewRelation($relationsResponse.length, data.english, data.swedish);
-		e?.target?.reset();
+		if ($relationsResponse) {
+			writeNewRelation($relationsResponse.length, data.english, data.swedish);
+			hasSubmitted = true;
+			e?.target?.reset();
+		}
 	}
 </script>
 
@@ -33,7 +40,6 @@
 >
 	{#if hasSubmitted}
 		<div>
-			Thanks!
 			<button
 				on:click|preventDefault={copyToClipboard}
 				class="px-4 py-3 border-slate-100 border rounded-3xl bg-slate-600 text-white w-52 mt-10"

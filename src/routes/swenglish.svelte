@@ -40,9 +40,9 @@
 
 {#if $relationsResponse && $relationsResponse[$step]}
 	<div
-		class="h-screen w-full p-16 flex justify-center items-center align-middle flex-col relative"
+		class="h-screen w-full p-3 md:p-16 sm:bg-green-300 flex justify-center items-center align-middle flex-col relative"
 	>
-		<div class="flex items-center  align-middle space-x-10 w-full">
+		<div class="flex items-center align-middle space-x-3 md:space-x-10 w-full">
 			<Card
 				showVotes={showEnglishVotes}
 				onClick={() => {
@@ -67,7 +67,7 @@
 					handleNextClick();
 				}}
 				in:fade={{ duration: 350, delay: 350 }}
-				class="absolute bottom-0 bg-slate-600 text-white w-full rounded-t-md p-4 flex justify-center cursor-pointer"
+				class="absolute bottom-0 sm:p-3 sm:bg-green-300 bg-slate-600 text-white w-full rounded-t-md p-4 flex justify-center cursor-pointer"
 			>
 				<h2 class="font-bold text-xl">Next</h2>
 			</div>
@@ -77,18 +77,18 @@
 	<div
 		class="h-screen w-full p-16 flex justify-center items-center align-middle flex-col relative"
 	>
-		<h3 class="text-2xl">That's all the utryck we've got hittills</h3>
-		<div class="flex gap-6">
+		<h3 class="text-2xl mb-8">That's all the utryck we've got hittills</h3>
+		<div class="flex md:flex-row flex-col gap-6">
 			<button
 				on:click|preventDefault={copyToClipboard}
-				class="px-4 py-3 border-slate-100 border rounded-3xl bg-slate-600 text-white w-52 mt-10"
+				class="px-4 py-3 border-slate-100 text-xl border rounded-3xl bg-slate-600 text-white md:w-52 "
 				>{showCopiedBanner
 					? "Copied to clipboard!"
 					: "Send it to your friends!"}</button
 			>
 
 			<a
-				class="px-4 text-center py-3 border-slate-600 border rounded-3xl bg-slate-100 w-52 mt-10"
+				class="px-4 text-center py-3 border-slate-600 border text-xl flex justify-center items-center rounded-3xl bg-slate-100 md:w-52 "
 				href="/contribute">Submit a translation</a
 			>
 		</div>

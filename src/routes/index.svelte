@@ -13,7 +13,7 @@
 </svelte:head>
 
 <div
-	class="flex flex-col items-center justify-center align-middle h-full w-full px-14"
+	class="flex flex-col items-center justify-center align-middle h-full w-full px-14 "
 >
 	<h1 class="text-5xl text-center mb-5">Vem har the best uttryck?</h1>
 	<p class="text-3xl mb-5">Engelska or Swedish?</p>

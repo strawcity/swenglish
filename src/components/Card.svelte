@@ -34,7 +34,7 @@
 	class="w-full text-center relative cursor-pointer"
 >
 	<div
-		class="text-xl font-english flex flex-col items-center align-middle justify-center h-52 w-full border-blue-200 bg-slate-50 relative z-10 rounded-md border"
+		class="text-xl font-english flex flex-col items-center align-middle justify-center h-52 w-full border-blue-200 bg-slate-50 relative z-10 rounded-md border p-2"
 	>
 		<h1>
 			{$relationsResponse[$step][language].concept}

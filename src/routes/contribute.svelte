@@ -52,7 +52,7 @@
 			class="w-full flex flex-col justify-between align-middle items-center"
 			on:submit|preventDefault={onSubmit}
 		>
-			<div class="w-full flex gap-8 justify-center">
+			<div class="w-full flex gap-8 justify-center md:flex-row flex-col">
 				<div class="flex flex-col">
 					<input
 						class="p-3"

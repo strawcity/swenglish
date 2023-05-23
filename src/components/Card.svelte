@@ -34,7 +34,7 @@
 	class="w-full text-center relative cursor-pointer"
 >
 	<div
-		class="text-xl font-english flex flex-col items-center align-middle justify-center h-52 w-full border-blue-200 bg-slate-50 relative z-10 rounded-md border p-2"
+		class={`text-xl font-english flex flex-col items-center align-middle justify-center h-52 w-full border-blue-200 bg-slate-50 relative z-10 rounded-md border p-2 font-${language}`}
 	>
 		<h1>
 			{$relationsResponse[$step][language].concept}
@@ -44,7 +44,7 @@
 	{#if showVotes}
 		<div
 			in:fly={{ y: 150, duration: 350 }}
-			class="absolute -top-14 bg-slate-300 w-full rounded-t-md p-4"
+			class={`absolute -top-14 bg-slate-300 w-full rounded-t-md p-4 font-${language}`}
 		>
 			{getVoteRatio(language)}% {language === "english"
 				? `feel the same`

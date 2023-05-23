@@ -38,6 +38,9 @@
 	}
 </script>
 
+<h1 class="text-2xl text-center absolute top-0 w-full py-4 ">
+	Vem har the best uttryck?
+</h1>
 {#if $relationsResponse && $relationsResponse[$step]}
 	<div
 		class="h-screen w-full p-3 md:p-16 sm:bg-green-300 flex justify-center items-center align-middle flex-col relative"
@@ -77,7 +80,7 @@
 	<div
 		class="h-screen w-full p-16 flex justify-center items-center align-middle flex-col relative"
 	>
-		<h3 class="text-2xl mb-8">That's all the utryck we've got hittills</h3>
+		<h3 class="text-2xl mb-8">That's all the uttryck we've got hittills</h3>
 		<div class="flex md:flex-row flex-col gap-6">
 			<button
 				on:click|preventDefault={copyToClipboard}

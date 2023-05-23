@@ -43,7 +43,7 @@
 </h1>
 {#if $relationsResponse && $relationsResponse[$step]}
 	<div
-		class="h-screen w-full p-3 md:p-16 sm:bg-green-300 flex justify-center items-center align-middle flex-col relative"
+		class="h-screen w-full p-3 md:p-16  flex justify-center items-center align-middle flex-col relative"
 	>
 		<div class="flex items-center align-middle space-x-3 md:space-x-10 w-full">
 			<Card
@@ -70,7 +70,7 @@
 					handleNextClick();
 				}}
 				in:fade={{ duration: 350, delay: 350 }}
-				class="absolute bottom-0 sm:p-3 sm:bg-green-300 bg-slate-600 text-white w-full rounded-t-md p-4 flex justify-center cursor-pointer"
+				class="absolute bottom-0 sm:p-3 bg-slate-600 text-white w-full rounded-t-md p-4 flex justify-center cursor-pointer"
 			>
 				<h2 class="font-bold text-xl">Next</h2>
 			</div>

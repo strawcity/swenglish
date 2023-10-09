@@ -21,8 +21,6 @@
 		showNextStep = true;
 	}
 
-	console.log("🚀 ~ relationsResponse:", $relationsResponse);
-
 	function handleNextClick() {
 		incrementStep();
 		showNextStep = false;

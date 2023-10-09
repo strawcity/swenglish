@@ -23,7 +23,7 @@
 			$relationsResponse[$step]?.english?.votes +
 			$relationsResponse[$step]?.swedish?.votes;
 		let ratio = languageVotes / totalVotes;
-		return 100 * Number(ratio.toFixed(2));
+		return Math.round(100 * Number(ratio));
 	}
 </script>
 

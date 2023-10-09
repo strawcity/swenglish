@@ -22,8 +22,8 @@
 		let totalVotes =
 			$relationsResponse[$step]?.english?.votes +
 			$relationsResponse[$step]?.swedish?.votes;
-		let ratio = (languageVotes / totalVotes).toFixed(2);
-		return 100 * Number(ratio);
+		let ratio = languageVotes / totalVotes;
+		return 100 * Number(ratio.toFixed(2));
 	}
 </script>
 
@@ -34,7 +34,7 @@
 	class="w-full text-center relative cursor-pointer"
 >
 	<div
-		class={`text-xl font-english flex flex-col items-center align-middle justify-center h-52 w-full border-blue-200 bg-slate-50 relative z-10 rounded-md border p-2 font-${language}`}
+		class={`text-xl flex flex-col items-center align-middle justify-center h-52 w-full border-blue-200 bg-slate-50 relative z-10 rounded-md border p-2 font-${language}`}
 	>
 		<h1>
 			{$relationsResponse[$step][language].concept}
